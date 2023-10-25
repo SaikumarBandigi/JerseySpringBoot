@@ -15,13 +15,14 @@ public class ItemResource {
     @Autowired
     private ItemRepository itemRepository;
 
+
     @GET
     public List<Item> getAllItems() {
         return itemRepository.findAll();
     }
 
     @GET
-    @Path("/{id}")
+    @Path("/getItem/{id}")
     public Item getItemById(@PathParam("id") Long id) {
         return itemRepository.findById(id).orElse(null);
     }
